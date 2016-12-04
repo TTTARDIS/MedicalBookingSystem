@@ -1,0 +1,14 @@
+﻿[{
+			"ID" : "1",
+	  "careTime" : "2016-04-26",
+	  "hsptName" : "大连医科大学第一附属医院",
+	"officeName" : "内科",
+	    "result" : "感冒"
+	},{
+			"ID" : "2",
+	  "careTime" : "2016-04-23",
+	  "hsptName" : "大连医科大学第二附属医院",
+	"officeName" : "内科",
+	    "result" : "肺炎"
+	}
+]

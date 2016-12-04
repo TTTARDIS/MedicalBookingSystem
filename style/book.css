@@ -1,0 +1,29 @@
+table{
+	border: solid 1px #CFCFCF ;
+	font-size: 12px;
+	margin-bottom: 15px;
+}
+th{
+	text-align: center;
+	padding-top: auto;
+	padding-bottom: auto;
+}
+td{
+	min-height: 100px;
+	text-align: center;
+	padding-top: auto;
+	padding-bottom: auto;
+}
+td a{
+	color: #4A939E;
+}
+.btn-link, .btn{
+	margin: 0;
+	padding: 0;
+}
+.halfday{
+	max-width: 15px;
+}
+.full{
+	background: #F5F5F5;
+}

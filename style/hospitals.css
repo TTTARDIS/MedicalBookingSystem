@@ -1,0 +1,41 @@
+/***************************** container *****************************/
+.hospital{
+	min-height: 150px;
+	width: 100%;
+	border-top: 1px solid #E8E8E8;
+}
+.hospital img{
+	height: 140px;
+	width: 235px;
+	margin-top: 5px;
+}
+.hospital:last-child{
+	height: 200px;
+	width: 100%;
+	border-top: 1px solid #E8E8E8;
+	border-bottom: 1px solid #E8E8E8;
+}
+.hospital button{
+	margin-top: 50px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

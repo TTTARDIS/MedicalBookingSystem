@@ -1,0 +1,20 @@
+﻿[{
+			"ID" : "1",
+	  "bookTime" : "2016-06-26 10:24",
+	  "hsptTime" : "2016-04-28 上午",
+	  "hsptName" : "大连医科大学第一附属医院",
+	"officeName" : "内科",
+	    "doctor" : "刘菲（主任医师）",
+	 "bookState" : "待看诊",
+	   "operate" : "1"
+	},{
+			"ID" : "2",
+	  "bookTime" : "2016-04-23 15:07",
+	  "hsptTime" : "2016-04-25 上午",
+	  "hsptName" : "大连医科大学第二附属医院",
+	"officeName" : "内科",
+	    "doctor" : "刘菲（主任医师）",
+	 "bookState" : "已看诊",
+	   "operate" : "0"
+	}
+]

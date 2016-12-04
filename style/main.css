@@ -1,0 +1,112 @@
+*{font-family: "Î¢ÈíÑÅºÚ", "ËÎÌå", Arial, Helvetica, sans-serif;}
+a { color: #000; text-decoration: none; }
+a:link, a:visited { text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/***************************** header *****************************/
+header { 
+	width: 100%;  
+	text-align:center;
+}
+.header_register { 
+	height: 30px; 
+	width: 100%; 
+	margin: 0 auto; 
+	position: relative;
+	background: #F5F5F5;
+	line-height: 30px;
+	color: #9C9C9C
+}
+.header_register a{
+	color: #4A939E;
+	font-weight: 500;
+}
+.header_register button{
+	color: #4A939E;
+	padding-bottom: 10px;
+}
+.header_ad { 
+	width: 100%; 
+}
+
+
+/***************************** navigation bar *****************************/
+.root_nav{
+	width: 100%;
+	background: #4A939E;
+}
+.root_nav .active{
+	background: #F3AC2E;
+}
+.root_nav .nav-pills  li{
+	text-align: center; 
+}
+.root_nav .nav-pills li a { 
+	height: 45px;
+	width: 100%;
+	height: 45px;
+	color: #FFFAFA;
+	font-size: 15px;
+	font-weight: 800; 
+	left: 0;
+}
+
+
+/***************************** footer *****************************/
+.cut-off-line{
+	height: 5px;
+	width: 100%;
+	background: #4A939E;
+}
+footer{
+	height: 120px;
+	width: 100%;
+	background: #F5F5F5;
+	padding-top: 20px;
+}
+footer p{
+	text-align: center;
+}
+
+
+/***************************** login *****************************/
+.modal-dialog{
+	width:410px;
+}
+#loginDiv .login_box{
+	width: 400px;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 15px;
+}
+#loginDiv .nav-tabs{
+	width: 400px;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 10px;
+	text-align: center;
+}
+#loginDiv .nav-tabs li{
+	width: 200px;
+}
+#directlyloginForm, #checkLoginForm{
+	width: 400px;
+	margin-left: auto;
+	margin-right: auto;
+}
+.w100{
+	width: 100px;
+	float: left;
+}
+.w300{
+	width: 270px;
+	float: left;
+	margin-left: 30px;
+}
+.rgst_button{
+	width: 100px;
+	background: #4A939E;
+	color: white;"
+}

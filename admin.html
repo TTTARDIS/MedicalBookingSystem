@@ -1,0 +1,378 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="gb2312">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>管理员</title>
+<base target="_blank">
+<link type="text/css" rel="stylesheet" href="style/bootstrap.min.css" />
+<link type="text/css" rel="stylesheet" href="style/main.css" />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/login.js"></script>
+<script type="text/javascript" src="js/admin.js"></script>
+</head>
+
+<body>
+<header>
+	<div class="header_register">
+		<div class="container">
+			<div class="col-md-6 col-sm-6 hidden-sm hidden-xs text-left" id="welcome">&nbsp;&nbsp;&nbsp;&nbsp;欢迎来到在线医疗预约（信管12-03欧桐桐毕业设计）</div>
+			<div class="col-md-6 col-sm-12 col-xs-12 text-center">
+				<label id="phoneBook">&nbsp;&nbsp;&nbsp;&nbsp;电话预约&nbsp;&nbsp;<span class="glyphicon glyphicon-earphone" aria-hidden="true"></span>&nbsp;&nbsp;010-12345678&nbsp;&nbsp;&nbsp;&nbsp;</label>
+				<button id="login" class="btn btn-link" data-toggle="modal" data-target=".bs-example-modal-lg">登录</button>
+				|<button href="register.html" class="btn btn-link" id="rgst">注册</button>
+			</div>
+		</div>
+	</div>
+	<!--登录框-->
+	<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" id="loginDiv">
+	  <div class="modal-dialog modal-lg">
+		<div class="modal-content">
+		  <div class="login_box">
+			<ul class="nav nav-tabs" id="loginTab">
+				<li class="active"><a href="#loginDirectly">快速登录</a></li>
+				<li><a href="#loginChecked">验证登录</a></li>
+			</ul>
+			<div class="tab-content">
+				<center style="display:none" id="pswWrong"><p class="text-warning">用户名或密码错误请重试！</p></center>
+				<div class="tab-pane active" id="loginDirectly">
+					<img src="images/prompt.jpg" style="margin-bottom:10px;" />
+					<form class="form-horizontal" id="directlyloginForm">
+						<div class="form-group">
+							<label for="inputName1" class="control-label w100">用户姓名</label>
+							<input type="text" class="form-control w300" id="loginName1" placeholder="已注册的真实姓名" />
+						</div>
+						<div class="form-group">
+							<label for="inputID1" class="control-label w100">身份证号</label>
+							<input type="text" class="form-control w300" id="loginID1" placeholder="与用户姓名对应的身份证号码" />
+						</div>
+						<div class="form-group">
+							<label for="inputPassword1" class="control-label w100">密码</label>
+							<input type="password" class="form-control w300" id="loginPassword1" placeholder="正确的注册密码" />
+						</div>
+					</form>
+					<div class="modal-footer">
+						<button type="submit" class="btn btn-default" data-dismiss="modal">取消</button>
+						<button type="submit" class="btn btn-default rgst_button" id="loginBtn1">登录</button>
+					</div>
+				</div>
+				<div class="tab-pane" id="loginChecked">
+					<img src="images/prompt.jpg" style="margin-bottom:10px;"/>
+					<form class="form-horizontal" id="checkLoginForm">
+						<div class="form-group">
+							<label for="inputName2" class="control-label w100">用户姓名</label>
+							<input type="text" class="form-control w300" id="loginName2" placeholder="已注册的真实姓名" />
+						</div>
+						<div class="form-group">
+							<label for="inputID2" class="control-label w100">身份证号</label>
+							<input type="text" class="form-control w300" id="loginID2" placeholder="与用户姓名对应的身份证号码" />
+						</div>
+						<div class="form-group">
+							<label for="inputPhone" class="control-label w100">手机号码</label>
+							<input type="text" class="form-control w300" id="loginPhone" placeholder="与证件绑定的手机号码" />
+						</div>
+						<div class="form-group">
+							<label for="checkPhone" class="control-label w100">验证码</label>
+							<input type="text" class="form-control" style="width:135px;margin-left:30px;float:left" id="loginCheckCode" />
+							<button type="submit" class="btn btn-default" style="color:blue;" placeholder="手机短信收到的验证码">发送验证码</button>
+						</div>
+					</form>
+					<div class="modal-footer">
+						<button type="submit" class="btn btn-default" data-dismiss="modal">取消</button>
+						<button type="submit" class="btn btn-default rgst_button" id="loginBtn2">登录</button>
+					</div>
+				</div>							
+			</div>
+		  </div>
+		  
+		</div>
+	  </div>
+	</div>
+	
+	<div class="header_ad">
+		<img class="img-responsive center-block" src="images/logo.png" />
+	</div>
+</header>
+<nav class="root_nav">
+	<div class="container">
+	<ul class="nav nav-pills nav-justified">
+        <li class="col-sm-3"><a href="index.html" title="首页">首页</a></li>
+        <li class="col-sm-3"><a href="hospitals.html" title="医院介绍">医院介绍</a></li>
+        <li class="col-sm-3">
+			<a class="dropdown-toggle" data-toggle="dropdown" href="booking.html" role="button" aria-haspopup="true" aria-expanded="false">
+			  免费预约
+			  <span class="caret"></span>
+			</a>
+			<ul class="dropdown-menu">
+				<li role="presentation"><a href="hospitals.html" style="color:black;">按医院预约</a></li>
+				<li role="presentation"><a href="disease.html" style="color:black;">按疾病预约</a></li>
+			</ul>
+		</li>
+        <li class="col-sm-3"><a href="disease.html" title="健康查询">健康查询</a></li>
+        <li class="col-sm-3"><a href="announcement.html" title="最新公告">最新公告</a></li>
+	</ul>
+	</div>
+</nav>
+
+<div class="container" style="width:60%;margin-top:20px;margin-bottom:30px;">
+<div class="row">
+	<div class="col-md-2 col-lg-2" style="border-right:solid 1px #E8E8E8;text-align:center">
+		<ul class="nav nav-pills nav-stacked" id="addTab">
+			<li class="active"><a href="#addAdmin">添加管理员</a></li>
+			<li><a href="#addHospital">添加医院</a></li>
+			<li><a href="#checkHospital">审核医院</a></li>
+			<li><a href="#deleteHospital">删除医院</a></li>
+			<li><a href="#addPhone">电话预约</a></li>
+		</ul>
+	</div>	
+	<div class="col-md-10 col-lg-10">
+		<div class="tab-content">
+			<div role="tabpanel" class="tab-pane active" id="addAdmin">
+				<form class="form-horizontal" id="addAdminForm">
+				  <div class="form-group">
+					<label for="inputAName" class="col-sm-2 control-label">姓名</label>
+					<div class="col-sm-10">
+					  <input type="email" class="form-control" id="inputAName" placeholder="管理员姓名">
+					</div>
+				  </div>
+				  <div class="form-group">
+					<label for="inputAPassword" class="col-sm-2 control-label">输入密码</label>
+					<div class="col-sm-10">
+					  <input type="password" class="form-control" id="inputAPassword" placeholder="管理员密码">
+					</div>
+				  </div>
+				  <div class="form-group">
+					<label for="checkAPassword" class="col-sm-2 control-label">确认密码</label>
+					<div class="col-sm-10">
+					  <input type="password" class="form-control" id="checkAPassword" placeholder="确认密码">
+					</div>
+				  </div>
+				  <div class="form-group">
+					<div class="col-sm-offset-2 col-sm-10">
+					  <button type="submit" class="btn btn-default">确认添加</button>
+					</div>
+				  </div>
+				</form>
+			</div>
+		
+			<div role="tabpanel" class="tab-pane" id="addHospital">
+				<form class="form-horizontal" id="addHospitalForm">
+				  <div class="form-group">
+					<label for="inputHName" class="col-sm-2 control-label">医院名称</label>
+					<div class="col-sm-10">
+					  <input type="email" class="form-control" id="inputHName" placeholder="医院名称">
+					</div>
+				  </div>
+				  <div class="form-group">
+					<label for="inputHPassword" class="col-sm-2 control-label">输入密码</label>
+					<div class="col-sm-10">
+					  <input type="password" class="form-control" id="inputHPassword" placeholder="设置初始密码">
+					</div>
+				  </div>
+				  <div class="form-group">
+					<label for="checkHPassword" class="col-sm-2 control-label">确认密码</label>
+					<div class="col-sm-10">
+					  <input type="password" class="form-control" id="checkHPassword" placeholder="确认密码">
+					</div>
+				  </div>
+				  <div class="form-group">
+					<label for="inputAddress" class="col-sm-2 control-label">地址</label>
+					<div class="col-sm-10">
+					  <input type="password" class="form-control" id="inputAddress" placeholder="XX省XX市XX区XX路XX号">
+					</div>
+				  </div>
+				  <div class="form-group">
+					<label for="inputAddress" class="col-sm-2 control-label">电话号码</label>
+					<div class="col-sm-10">
+					  <input type="password" class="form-control" id="inputAddress" placeholder="010-12345678">
+					</div>
+				  </div>
+				  <div class="form-group">
+					<label for="inputRank" class="col-sm-2 control-label">医院等级</label>
+					<div class="col-sm-10">
+					  <input type="password" class="form-control" id="inputRank" placeholder="三级甲等">
+					</div>
+				  </div>
+				  <div class="form-group">
+					<label for="inputBtime" class="col-sm-2 control-label">放号时间</label>
+					<div class="col-sm-10">
+					  <input type="password" class="form-control" id="inputBtime" placeholder="09:00">
+					</div>
+				  </div>
+				  <div class="form-group">
+					<label for="inputRtime" class="col-sm-2 control-label">退号时间</label>
+					<div class="col-sm-10">
+					  <input type="password" class="form-control" id="inputRtime" placeholder="每天14:30">
+					</div>
+				  </div>
+				  <div class="form-group">
+					<label for="inputPeriod" class="col-sm-2 control-label">预约周期</label>
+					<div class="col-sm-10">
+					  <input type="password" class="form-control" id="inputPeriod" placeholder="7">
+					</div>
+				  </div><div class="form-group">
+					<label for="inputNum" class="col-sm-2 control-label">预约数量</label>
+					<div class="col-sm-10">
+					  <input type="password" class="form-control" id="inputNum" placeholder="45">
+					</div>
+				  </div>
+				  <div class="form-group">
+					<label for="inputIntro" class="col-sm-2 control-label">医院介绍</label>
+					<div class="col-sm-10">
+					  <textarea class="form-control" rows="3" id="inputIntro"></textarea>
+					</div>
+				  </div>
+				  <div class="form-group">
+					<label for="inputRule" class="col-sm-2 control-label">预约规则</label>
+					<div class="col-sm-10">
+					  <textarea class="form-control" rows="3" id="inputRule"></textarea>
+					</div>
+				  </div>
+				  <div class="form-group">
+					<label for="exampleInputFile" class="col-sm-2 control-label">添加照片（不超过三张）</label>
+					<div class="col-sm-10">
+					  <input type="file" id="exampleInputFile" />
+					</div>
+				  </div>
+				  <div class="form-group">
+					<div class="col-sm-offset-2 col-sm-10">
+					  <button type="submit" class="btn btn-default">确认添加</button>
+					</div>
+				  </div>
+				</form>
+			</div>
+			
+			<div role="tabpanel" class="tab-pane" id="checkHospital">
+				<form class="form-horizontal">
+				  <div class="form-group">
+					<label for="inputCName" class="col-sm-2 control-label">医院名称</label>
+					<div class="col-sm-10">
+					  <input type="text" class="form-control" id="inputCName" />
+					</div>
+				  </div>
+				  <div class="form-group">
+					<label for="inputCAddress" class="col-sm-2 control-label">地址</label>
+					<div class="col-sm-10">
+					  <input type="text" class="form-control" id="inputCAddress" />
+					</div>
+				  </div>
+				  <div class="form-group">
+					<label for="inputCPhone" class="col-sm-2 control-label">电话号码</label>
+					<div class="col-sm-10">
+					  <input type="text" class="form-control" id="inputCPhone" />
+					</div>
+				  </div>
+				  <div class="form-group">
+					<label for="inputCRank" class="col-sm-2 control-label">医院等级</label>
+					<div class="col-sm-10">
+					  <input type="text" class="form-control" id="inputCRank" />
+					</div>
+				  </div>
+				  <div class="form-group">
+					<label for="inputCBtime" class="col-sm-2 control-label">放号时间</label>
+					<div class="col-sm-10">
+					  <input type="text" class="form-control" id="inputCBtime">
+					</div>
+				  </div>
+				  <div class="form-group">
+					<label for="inputCRtime" class="col-sm-2 control-label">退号时间</label>
+					<div class="col-sm-10">
+					  <input type="text" class="form-control" id="inputCRtime">
+					</div>
+				  </div>
+				  <div class="form-group">
+					<label for="inputCPeriod" class="col-sm-2 control-label">预约周期</label>
+					<div class="col-sm-10">
+					  <input type="text" class="form-control" id="inputCPeriod">
+					</div>
+				  </div><div class="form-group">
+					<label for="inputCNum" class="col-sm-2 control-label">预约数量</label>
+					<div class="col-sm-10">
+					  <input type="text" class="form-control" id="inputCNum">
+					</div>
+				  </div>
+				  <div class="form-group">
+					<label for="inputCIntro" class="col-sm-2 control-label">医院介绍</label>
+					<div class="col-sm-10">
+					  <textarea class="form-control" rows="3" id="inputCIntro"></textarea>
+					</div>
+				  </div>
+				  <div class="form-group">
+					<label for="inputCRule" class="col-sm-2 control-label">预约规则</label>
+					<div class="col-sm-10">
+					  <textarea class="form-control" rows="3" id="inputCRule"></textarea>
+					</div>
+				  </div>
+				  <div class="form-group">
+					<label for="exampleInputFile" class="col-sm-2 control-label">添加照片</label>
+					<div class="col-sm-10">
+					  <img src="" id="InputImg" />
+					</div>
+				  </div>
+				  <div class="form-group">
+					<div class="col-sm-offset-2 col-sm-10">
+					  <button type="submit" class="btn btn-default">通过</button>
+					</div>
+				  </div>
+				  <hr/>
+				  <div class="form-group">
+					<label for="inputSggst" class="col-sm-2 control-label">审核不通过</label>
+					<div class="col-sm-10">
+					  <textarea class="form-control" rows="3" id="inputSggst"></textarea>
+					</div>
+				  </div>
+				  <div class="form-group">
+					<div class="col-sm-offset-2 col-sm-10">
+						<button type="submit" class="btn btn-default">不通过原因</button>
+					</div>
+				  </div>
+				</form>
+			</div>
+			
+			<div role="tabpanel" class="tab-pane" id="deleteHospital">
+				<table class="table">
+					<thead>
+						<tr>
+						  <th>编号</th>
+						  <th>医院名称</th>
+						  <th>删除</th>
+						</tr>
+					</thead>
+					<tbody id="deleteHsptsTb">
+						<!--<tr>
+						  <td>001</td>
+						  <td>XXXX医院</td>
+						  <td><button class="btn btn-link">删除</button></td>
+						</tr>
+						<tr>
+						  <td>002</td>
+						  <td>****医院</td>
+						  <td><button class="btn btn-link">删除</button></td>
+						</tr>-->
+					</tbody>
+				</table>
+			
+			</div>
+			
+			<div role="tabpanel" class="tab-pane" id="addPhone">
+			</div>
+	
+		</div>
+	</div>
+</div>
+</div>
+
+<div class="cut-off-line">
+</div>
+
+<footer>
+<p>毕业设计&nbsp;&nbsp;&nbsp;&nbsp;基于WEb的医疗预约前端系统的分析与设计</p>
+<p>指导老师：谷锐&nbsp;&nbsp;&nbsp;&nbsp;作者：欧桐桐&nbsp;&nbsp;&nbsp;&nbsp;学号：2220122592</p>
+<p>学院：交通运输管理学院&nbsp;&nbsp;&nbsp;&nbsp;专业班级：信息管理与信息系统12-03</p>
+</footer>
+
+</body>
+
+</html>

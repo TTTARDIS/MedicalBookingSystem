@@ -1,0 +1,345 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="gb2312">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>用户中心</title>
+<base target="_blank">
+<link type="text/css" rel="stylesheet" href="style/bootstrap.min.css" />
+<link type="text/css" rel="stylesheet" href="style/main.css" />
+<link type="text/css" rel="stylesheet" href="style/user.css" />
+<link type="text/css" rel="stylesheet" href="style/bootstrap-datetimepicker.min.css">
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/bootstrap-datetimepicker.min.js"></script>
+<script type="text/javascript" src="js/login.js"></script>
+<script type="text/javascript" src="js/user.js"></script>
+</head>
+
+<body>
+
+<header>
+	<div class="header_register">
+		<div class="container">
+			<div class="col-md-6 col-sm-6 hidden-sm hidden-xs text-left" id="welcome">&nbsp;&nbsp;&nbsp;&nbsp;欢迎来到在线医疗预约（信管12-03欧桐桐毕业设计）</div>
+			<div class="col-md-6 col-sm-12 col-xs-12 text-center">
+				<label id="phoneBook">&nbsp;&nbsp;&nbsp;&nbsp;电话预约&nbsp;&nbsp;<span class="glyphicon glyphicon-earphone" aria-hidden="true"></span>&nbsp;&nbsp;010-12345678&nbsp;&nbsp;&nbsp;&nbsp;</label>
+				<button id="login" class="btn btn-link" data-toggle="modal" data-target=".bs-example-modal-lg">登录</button>
+				|<button href="register.html" class="btn btn-link" id="rgst">注册</button>
+			</div>
+		</div>
+	</div>
+	<!--登录框-->
+	<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" id="loginDiv">
+	  <div class="modal-dialog modal-lg">
+		<div class="modal-content">
+		  <div class="login_box">
+			<ul class="nav nav-tabs" id="loginTab">
+				<li class="active"><a href="#loginDirectly">快速登录</a></li>
+				<li><a href="#loginChecked">验证登录</a></li>
+			</ul>
+			<div class="tab-content">
+				<center style="display:none" id="pswWrong"><p class="text-warning">用户名或密码错误请重试！</p></center>
+				<div class="tab-pane active" id="loginDirectly">
+					<img src="images/prompt.jpg" style="margin-bottom:10px;" />
+					<form class="form-horizontal" id="directlyloginForm">
+						<div class="form-group">
+							<label for="inputName1" class="control-label w100">用户姓名</label>
+							<input type="text" class="form-control w300" id="loginName1" placeholder="已注册的真实姓名" />
+						</div>
+						<div class="form-group">
+							<label for="inputID1" class="control-label w100">身份证号</label>
+							<input type="text" class="form-control w300" id="loginID1" placeholder="与用户姓名对应的身份证号码" />
+						</div>
+						<div class="form-group">
+							<label for="inputPassword1" class="control-label w100">密码</label>
+							<input type="password" class="form-control w300" id="loginPassword1" placeholder="正确的注册密码" />
+						</div>
+					</form>
+					<div class="modal-footer">
+						<button type="submit" class="btn btn-default" data-dismiss="modal">取消</button>
+						<button type="submit" class="btn btn-default rgst_button" id="loginBtn1">登录</button>
+					</div>
+				</div>
+				<div class="tab-pane" id="loginChecked">
+					<img src="images/prompt.jpg" style="margin-bottom:10px;"/>
+					<form class="form-horizontal" id="checkLoginForm">
+						<div class="form-group">
+							<label for="inputName2" class="control-label w100">用户姓名</label>
+							<input type="text" class="form-control w300" id="loginName2" placeholder="已注册的真实姓名" />
+						</div>
+						<div class="form-group">
+							<label for="inputID2" class="control-label w100">身份证号</label>
+							<input type="text" class="form-control w300" id="loginID2" placeholder="与用户姓名对应的身份证号码" />
+						</div>
+						<div class="form-group">
+							<label for="inputPhone" class="control-label w100">手机号码</label>
+							<input type="text" class="form-control w300" id="loginPhone" placeholder="与证件绑定的手机号码" />
+						</div>
+						<div class="form-group">
+							<label for="checkPhone" class="control-label w100">验证码</label>
+							<input type="text" class="form-control" style="width:135px;margin-left:30px;float:left" id="loginCheckCode" />
+							<button type="submit" class="btn btn-default" style="color:blue;" placeholder="手机短信收到的验证码">发送验证码</button>
+						</div>
+					</form>
+					<div class="modal-footer">
+						<button type="submit" class="btn btn-default" data-dismiss="modal">取消</button>
+						<button type="submit" class="btn btn-default rgst_button" id="loginBtn2">登录</button>
+					</div>
+				</div>							
+			</div>
+		  </div>
+		  
+		</div>
+	  </div>
+	</div>
+	
+	<div class="header_ad">
+		<img class="img-responsive center-block" src="images/logo.png" />
+	</div>
+</header>
+
+<nav class="root_nav">
+	<div class="container">
+	<ul class="nav nav-pills nav-justified">
+        <li class="col-sm-3"><a href="index.html" title="首页">首页</a></li>
+        <li class="col-sm-3"><a href="hospitals.html" title="医院介绍">医院介绍</a></li>
+        <li class="col-sm-3">
+			<a class="dropdown-toggle" data-toggle="dropdown" href="booking.html" role="button" aria-haspopup="true" aria-expanded="false">
+			  免费预约
+			  <span class="caret"></span>
+			</a>
+			<ul class="dropdown-menu">
+				<li role="presentation"><a href="hospitals.html" style="color:black;">按医院预约</a></li>
+				<li role="presentation"><a href="disease.html" style="color:black;">按疾病预约</a></li>
+			</ul>
+		</li>
+        <li class="col-sm-3"><a href="disease.html" title="健康查询">健康查询</a></li>
+        <li class="col-sm-3"><a href="announcement.html" title="最新公告">最新公告</a></li>
+	</ul>
+	</div>
+</nav>
+
+<div class="container" style="max-width:950px;margin-top:20px;margin-bottom:30px;">
+<div class="row">
+	<div class="col-md-2 col-lg-2 hidden-sm hidden-xs" style="border-right:solid 1px #E8E8E8;text-align:center">
+		<ul class="nav nav-pills nav-stacked" id="infoTab1">
+			<li role="presentation" class="disabled"><a>欢迎您，用户名！</a></li>
+			<li role="presentation" class="active"><a href="#bookInfo">预约信息</a></li>
+			<li role="presentation"><a href="#myInfo">个人信息</a></li>
+			<li role="presentation"><a href="#records">健康管理</a></li>
+		</ul>
+	</div>
+	
+	<div class="col-md-10 col-lg-10 col-sm-12 col-xs-12">
+		<ul class="nav nav-pills hidden-md hidden-lg col-sm-12 col-xs-12" id="infoTab2">
+			<li role="presentation" class="disabled"><a>欢迎您，用户名！</a></li>
+			<li role="presentation" class="active"><a href="#bookInfo">预约信息</a></li>
+			<li role="presentation"><a href="#myInfo">个人信息</a></li>
+			<li role="presentation"><a href="#records">健康管理</a></li>
+		</ul>
+		<div class="tab-content">
+			<div role="tabpanel" class="tab-pane active" id="bookInfo">
+			<table class="table">
+			  <thead>
+				<tr>
+				  <th>预约时间</th>
+				  <th>就诊时间</th>
+				  <th>医院</th>
+				  <th>科室</th>
+				  <th>医生</th>
+				  <th>预约状态</th>
+				  <th>操作</th>
+				</tr>
+			  </thead>
+			  <tbody id="bookInformation">
+				<!--<tr>
+				  <td>2016-04-26 10:24</td>
+				  <td>2016-04-28 上午</td>
+				  <td>大连XX医院</td>
+				  <td>内科</td>
+				  <td>刘菲（主任医师）</td>
+				  <td>待看诊</td>
+				  <td><button class="btn btn-link">取消</button></td>
+				</tr>
+				<tr>
+				  <td>2016-04-23 15:07</td>
+				  <td>2016-04-25 上午</td>
+				  <td>大连XX医院</td>
+				  <td>内科</td>
+				  <td>刘菲（主任医师）</td>
+				  <td>待看诊</td>
+				  <td><button class="btn btn-link disabled">已过期</button></td>
+				</tr>-->
+			  </tbody>
+			</table>
+			</div>
+		
+			<div role="tabpanel" class="tab-pane" id="myInfo">
+				<ul class="nav nav-tabs" id="myInfoTab" style="margin-bottom:20px">
+				  <li role="presentation" class="active"><a href="#theInfo">个人信息</a></li>
+				  <li role="presentation"><a href="#modifyInfo">修改密码</a></li>
+				</ul>
+				<div class="tab-content">
+					<div role="tabpanel" class="tab-pane active" id="theInfo">
+						<p><label class="label_left">姓名:</label><label class="label-right" id="userName">张三</label></p>
+						<p><label class="label_left">性别:</label><label class="label-right" id="userSex">男</label></p>
+						<p><label class="label_left">年龄:</label><label class="label-right" id="userAge">29</label></p>
+						<p><label class="label_left">身份证号:</label><label class="label-right" id="userIDNum">123456789012345678</label></p>
+						<p><label class="label_left">手机号:</label><label class="label-right" id="userPhone">12312345678</label></p>
+					</div>
+					<div role="tabpanel" class="tab-pane" id="modifyInfo">
+						<form class="form-horizontal" id="modify">
+							<p>
+								<label for="inputPassword" class="label_left">设置密码</label>
+								<input type="text" class="input_right" id="inputPassword" />
+							</p>
+							<p>
+								<label for="checkPassword" class="label_left">确认密码</label>
+								<input type="text" class="input_right" id="checkPassword" />
+							</p>
+							<p>
+								<label for="inputPhone" class="label_left">手机号码</label>
+								<input type="text" class="input_right" id="inputPhone" />
+							</p>
+							<p>
+								<label for="checkPhone" class="label_left">手机验证码</label>
+								<input type="text" class="input_right" style="width:295px;" id="checkPhone" />
+								<button type="submit" class="btn btn-default" style="color:blue;width:100px" id="inputCode">发送验证码</button>
+							</p>
+							<p>
+								<center><button type="submit" class="btn btn-default register_button" id="cfmChange">确认修改</button></center>
+							</p>
+						</form>
+					</div>
+				</div>
+			</div>
+			
+			<div role="tabpanel" class="tab-pane" id="records">
+				<ul class="nav nav-tabs" id="recordsInfo" style="margin-bottom:20px">
+				  <li role="presentation" class="active"><a href="#disease">病史</a></li>
+				  <li role="presentation"><a href="#doctor">看诊记录</a></li>
+				</ul>
+				<div class="tab-content">
+					<div role="tabpanel" class="tab-pane active" id="disease">
+						<form id="addDisease">
+							<h3>家族史</h3>
+							<p>您或您的近亲（母亲、父亲、兄弟姐妹、祖父母）是否曾经患有以下疾病？（可多选）</p>
+							<p class="p_content">
+								<input type="checkbox" value="高血压">高血压 <input type="checkbox" value="白内障">白内障 
+								<input type="checkbox" value="血友病">血友病 <input type="checkbox" value="青光眼">青光眼 
+								<input type="checkbox" value="肺癌">肺癌 <input type="checkbox" value="胃癌">胃癌 
+								<input type="checkbox" value="老年痴呆症 ">老年痴呆症 <input type="checkbox" value="糖尿病 ">糖尿病 
+								<input type="checkbox" value="精神分裂症 ">精神分裂症 <input type="checkbox" value="哮喘 ">哮喘 
+								<input type="checkbox" value="抑郁症 ">抑郁症 <input type="checkbox" value="心脏病">心脏病 
+								<input type="checkbox" value="甲状腺疾病 ">甲状腺疾病 <input type="checkbox" value="癫痫 ">癫痫 
+							</p>
+							<h3>疾病史</h3>
+							<p>您是否患过以下疾病：（可多选）</p>
+							<p class="p_content">
+								<input type="checkbox" value="高血压">高血压 <input type="checkbox" value="血友病">血友病  
+								<input type="checkbox" value="糖尿病">糖尿病 <input type="checkbox" value="哮喘 ">哮喘 
+								<input type="checkbox" value="抑郁症 ">抑郁症 <input type="checkbox" value="心脏病">心脏病 
+								<input type="checkbox" value="甲状腺疾病 ">甲状腺疾病 <input type="checkbox" value="癫痫 ">癫痫
+								<input type="checkbox" value="肝胆外科疾病 ">肝胆外科疾病 <input type="checkbox" value="肿瘤">肿瘤 
+								<input type="checkbox" value="肾炎">肾炎 <input type="checkbox" value="肺炎">肺炎 
+								<input type="checkbox" value="耳鼻喉科疾病">耳鼻喉科疾病 <input type="checkbox" value="精神类疾病">精神类疾病 
+								<input type="checkbox" value="眼科疾病">眼科疾病 <input type="checkbox" value="盆腔疾病">盆腔疾病 
+								<input type="checkbox" value="皮肤科疾病">皮肤科疾病 <input type="checkbox" value="乳腺疾病">乳腺疾病 
+								<input type="checkbox" value="偏头痛">偏头痛 
+							</p>
+							<h3>过敏史</h3>
+							<p>您是否患过以下疾病：（可多选）</p>
+							<p class="p_content">
+								<input type="radio" name="allergy" id="allergy1" value="yes" checked>是
+								<input type="radio" name="allergy" id="allergy1" value="no" checked>否
+								<label>&nbsp;&nbsp;&nbsp;&nbsp;过敏物质</label><input type="text" id="allergyElement" />
+							</p>
+							<h3>备注</h3>
+							<!--<p class="p_content">
+								一条以前的备注
+							</p>
+							<p class="p_content">
+								又一条以前的备注
+							</p>-->
+							<p class="p_content">
+								<label>添加一条备注</label>
+								<input type="text" id="allergyElement" />
+							</p>
+							<button class="btn btn-default">保存</button>
+						</form>
+					</div>
+					<div role="tabpanel" class="tab-pane" id="doctor">
+						<table class="table">
+						  <thead>
+							<tr>
+							  <th>就诊时间</th>
+							  <th>就诊医院</th>
+							  <th>就诊科室</th>
+							  <th>诊治结果</th>
+							</tr>
+						  </thead>
+						  <tbody id="careRecords">
+							<!--<tr>
+							  <td>2016-04-26 10:24</td>
+							  <td>大连XX医院</td>
+							  <td>内科</td>
+							  <td>感冒</td>
+							</tr>
+							<tr>
+							  <td>2016-04-23 15:07</td>
+							  <td>大连XX医院</td>
+							  <td>内科</td>
+							  <td>肺炎</td>
+							</tr>-->
+						  </tbody>
+						</table>
+						<h4>添加一条就诊记录</h4>
+						<form id="addRecord">
+							<p>
+								<label for="inputTime">就诊时间</label>
+								<div class="input-group date form_date input_right" data-date="" data-date-format="dd MM yyyy" 
+								data-link-field="dtp_input" data-link-format="yyyy-mm-dd" style="width:400px;">
+									<input class="form-control input_right" size="16" type="text" id="inputTime" value="" readonly>
+									<span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+								</div>
+								<input type="hidden" class="form-control" id="dtp_input" value="" /><br/>
+							</p>
+							<p>
+								<label for="inputHospital">就诊医院</label>
+								<select type="text" class="form-control input_right" id="inputHospital"></select>
+							</p>
+							<p>
+								<label for="inputOffice">就诊科室</label>
+								<select type="text" class="form-control input_right" id="inputOffice"></select>
+							</p>
+							<p>
+								<label for="result">诊治结果</label>
+								<textarea type="text" class="form-control input_right" rows="3" id="result"></textarea>
+							</p>
+							<p>
+								<button type="submit" class="btn btn-default">添加</button>
+							</p>
+						</form>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+	</div>
+</div>
+</div>
+
+<div class="cut-off-line">
+</div>
+
+<footer>
+<p>毕业设计&nbsp;&nbsp;&nbsp;&nbsp;基于WEb的医疗预约前端系统的分析与设计</p>
+<p>指导老师：谷锐&nbsp;&nbsp;&nbsp;&nbsp;作者：欧桐桐&nbsp;&nbsp;&nbsp;&nbsp;学号：2220122592</p>
+<p>学院：交通运输管理学院&nbsp;&nbsp;&nbsp;&nbsp;专业班级：信息管理与信息系统12-03</p>
+</footer>
+
+</body>
+
+</html>

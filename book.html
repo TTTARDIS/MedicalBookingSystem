@@ -1,0 +1,244 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="gb2312">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>免费预约</title>
+<base target="_blank">
+<link type="text/css" rel="stylesheet" href="style/bootstrap.min.css" />
+<link type="text/css" rel="stylesheet" href="style/main.css" />
+<link type="text/css" rel="stylesheet" href="style/book.css" />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/book.js"></script>
+<script type="text/javascript" src="js/login.js"></script>
+
+</head>
+
+<body>
+<header>
+	<div class="header_register">
+		<div class="container">
+			<div class="col-md-6 col-sm-6 hidden-sm hidden-xs text-left" id="welcome">&nbsp;&nbsp;&nbsp;&nbsp;欢迎来到在线医疗预约（信管12-03欧桐桐毕业设计）</div>
+			<div class="col-md-6 col-sm-12 col-xs-12 text-center">
+				<label id="phoneBook">&nbsp;&nbsp;&nbsp;&nbsp;电话预约&nbsp;&nbsp;<span class="glyphicon glyphicon-earphone" aria-hidden="true"></span>&nbsp;&nbsp;010-12345678&nbsp;&nbsp;&nbsp;&nbsp;</label>
+				<button id="login" class="btn btn-link" data-toggle="modal" data-target=".bs-example-modal-lg">登录</button>
+				|<button href="register.html" class="btn btn-link" id="rgst">注册</button>
+			</div>
+		</div>
+	</div>
+	<!--登录框-->
+	<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" id="loginDiv">
+	  <div class="modal-dialog modal-lg">
+		<div class="modal-content">
+		  <div class="login_box">
+			<ul class="nav nav-tabs" id="loginTab">
+				<li class="active"><a href="#loginDirectly">快速登录</a></li>
+				<li><a href="#loginChecked">验证登录</a></li>
+			</ul>
+			<div class="tab-content">
+				<center style="display:none" id="pswWrong"><p class="text-warning">用户名或密码错误请重试！</p></center>
+				<div class="tab-pane active" id="loginDirectly">
+					<img src="images/prompt.jpg" style="margin-bottom:10px;" />
+					<form class="form-horizontal" id="directlyloginForm">
+						<div class="form-group">
+							<label for="inputName1" class="control-label w100">用户姓名</label>
+							<input type="text" class="form-control w300" id="loginName1" placeholder="已注册的真实姓名" />
+						</div>
+						<div class="form-group">
+							<label for="inputID1" class="control-label w100">身份证号</label>
+							<input type="text" class="form-control w300" id="loginID1" placeholder="与用户姓名对应的身份证号码" />
+						</div>
+						<div class="form-group">
+							<label for="inputPassword1" class="control-label w100">密码</label>
+							<input type="password" class="form-control w300" id="loginPassword1" placeholder="正确的注册密码" />
+						</div>
+					</form>
+					<div class="modal-footer">
+						<button type="submit" class="btn btn-default" data-dismiss="modal">取消</button>
+						<button type="submit" class="btn btn-default rgst_button" id="loginBtn1">登录</button>
+					</div>
+				</div>
+				<div class="tab-pane" id="loginChecked">
+					<img src="images/prompt.jpg" style="margin-bottom:10px;"/>
+					<form class="form-horizontal" id="checkLoginForm">
+						<div class="form-group">
+							<label for="inputName2" class="control-label w100">用户姓名</label>
+							<input type="text" class="form-control w300" id="loginName2" placeholder="已注册的真实姓名" />
+						</div>
+						<div class="form-group">
+							<label for="inputID2" class="control-label w100">身份证号</label>
+							<input type="text" class="form-control w300" id="loginID2" placeholder="与用户姓名对应的身份证号码" />
+						</div>
+						<div class="form-group">
+							<label for="inputPhone" class="control-label w100">手机号码</label>
+							<input type="text" class="form-control w300" id="loginPhone" placeholder="与证件绑定的手机号码" />
+						</div>
+						<div class="form-group">
+							<label for="checkPhone" class="control-label w100">验证码</label>
+							<input type="text" class="form-control" style="width:135px;margin-left:30px;float:left" id="loginCheckCode" />
+							<button type="submit" class="btn btn-default" style="color:blue;" placeholder="手机短信收到的验证码">发送验证码</button>
+						</div>
+					</form>
+					<div class="modal-footer">
+						<button type="submit" class="btn btn-default" data-dismiss="modal">取消</button>
+						<button type="submit" class="btn btn-default rgst_button" id="loginBtn2">登录</button>
+					</div>
+				</div>							
+			</div>
+		  </div>
+		  
+		</div>
+	  </div>
+	</div>
+	
+	<div class="header_ad">
+		<img class="img-responsive center-block" src="images/logo.png" />
+	</div>
+</header>
+<nav class="root_nav">
+	<div class="container">
+	<ul class="nav nav-pills nav-justified">
+        <li class="col-sm-3"><a href="index.html" title="首页">首页</a></li>
+        <li class="col-sm-3"><a href="hospitals.html" title="医院介绍">医院介绍</a></li>
+        <li class="col-sm-3"><a href="booking.html" class="active" title="免费预约">免费预约</a></li>
+        <li class="col-sm-3"><a href="disease.html" title="健康查询">健康查询</a></li>
+        <li class="col-sm-3"><a href="announcement.html" title="最新公告">最新公告</a></li>
+	</ul>
+	</div>
+</nav>
+<div id="nav_ads" class="carousel slide" data-ride="carousel" style="margin-bottom:10px;">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#nav_ads" data-slide-to="0" class="active"></li>
+    <li data-target="#nav_ads" data-slide-to="1"></li>
+    <li data-target="#nav_ads" data-slide-to="2"></li>
+  </ol>
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner" role="listbox">
+    <div class="item active">
+      <img src="images/banner1.jpg" alt="...">
+      <!--<div class="carousel-caption">
+      </div>-->
+    </div>
+    <div class="item">
+      <img src="images/banner2.jpg" alt="...">
+    </div>
+    <div class="item">
+         <img src="images/banner3.jpg" alt="Third slide">
+      </div>
+  </div>
+  <!-- Controls -->
+  <a class="left carousel-control" href="#nav_ads" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="#nav_ads" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+
+<div class="container">
+	<div class="row">
+		<div class="col-md-3"><img src="" style="height:140px;width:235px;margin-top:5px;" id="Hpic" /></div>
+		<div class="col-md-6">
+			<a href="" id="Hlink"><h4 id="Hname">医院名称</h4></a>
+			<label class="text-warning" id="rank">等级</label>
+			<p class="text-muted" id="btime"><span class="glyphicon glyphicon-time" aria-hidden="true"></span></p>
+			<p class="text-muted" id="phone"><span class="glyphicon glyphicon-earphone" aria-hidden="true"></span></p>
+			<p class="text-muted" id="address"><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span></p>
+		</div>
+		<div class="col-md-3 hidden-sm hidden-xs" id="ads">
+			<h4><b>相关医院推荐</b></h4>
+			<!--<p><a href="#">一家付费的推荐医院</a></p>-->
+		</div>
+	</div>	
+	<h4>科室排班表&nbsp;&nbsp;<small>您已选择<span id="bookHsptName"> 医院</span><span id="bookOffcName"> 科室</span>，现在请确认时间</small></h4>
+  <div class="row">
+	<table class="table-bordered col-md-9 col-lg-9 col-sm-12 col-xs-12">
+		<tr>
+			<th class="halfday"><button type="button" class="btn btn-link"><span class="glyphicon glyphicon-triangle-left"></span></button></th>
+			<th>星期一<br/>2016-06-20</th>
+			<th>星期二<br/>2016-06-21</th>
+			<th>星期三<br/>2016-06-22</th>
+			<th>星期四<br/>2016-06-23</th>
+			<th>星期五<br/>2016-06-24</th>
+			<th>星期六<br/>2016-06-25</th>
+			<th>星期日<br/>2016-06-26</th>
+			<th class="halfday"><button type="button" class="btn btn-link"><span class="glyphicon glyphicon-triangle-right"></span></button></th>
+		</tr>
+		<tr>
+			<td class="halfday">上午</td>
+			<!--<td class="full">约满</td>
+			<td><button type="button" class="btn btn-link">预约<br/>剩余：21</button></td>
+			<td class="full">约满</td>
+			<td><button type="button" class="btn btn-link">预约<br/>剩余：21</button></td>
+			<td><button type="button" class="btn btn-link">预约<br/>剩余：21</button></td>
+			<td class="full">约满</td>
+			<td><button type="button" class="btn btn-link">预约<br/>剩余：21</button></td>
+			<td class="halfday"></td>-->
+			<td id="Mon1"></td>
+			<td id="Tue1"></td>
+			<td id="Wsd1"></td>
+			<td id="Thr1"></td>
+			<td id="Fri1"></td>
+			<td id="Sat1"></td>
+			<td id="Sun1"></td>
+			<td class="halfday"></td>
+		</tr>
+		<tr>
+			<td class="halfday">下午</td>
+			<!--<td class="full">约满</td>
+			<td class="full">约满</td>
+			<td><button type="button" class="btn btn-link">预约<br/>剩余：21</button></td>
+			<td class="full">约满</td>
+			<td><button type="button" class="btn btn-link">预约<br/>剩余：21</button></td>
+			<td class="full">约满</td>
+			<td><button type="button" class="btn btn-link">预约<br/>剩余：21</button></td>
+			<td class="halfday"></td>-->
+			<td id="Mon2"></td>
+			<td id="Tue2"></td>
+			<td id="Wsd2"></td>
+			<td id="Thr2"></td>
+			<td id="Fri2"></td>
+			<td id="Sat2"></td>
+			<td id="Sun2"></td>
+			<td class="halfday"></td>
+		</tr>
+		<tr>
+			<td class="halfday">晚上</td>
+			<td class="full"></td>
+			<td class="full"></td>
+			<td class="full"></td>
+			<td class="full"></td>
+			<td class="full"></td>
+			<td class="full"></td>
+			<td class="full"></td>
+			<td class="halfday"></td>
+		</tr>
+	</table>
+	<div class="col-md-3 col-lg-3 col-sm-12 col-xs-12" style="margin-top:10px;" id="rules">
+		<p>14:00后停止当天预约</p>
+		<p><b>退号时间：</b>就诊前一工作日14:00前</p>
+		<hr/>
+		<h4><b>特殊规则</b></h4>
+		<!--<p>1.特殊规则一条特殊规则一条特殊规则一条特殊规则一条</p>
+		<p>2.特殊规则一条特殊规则一条特殊规则一条特殊规则一条</p>
+		<p>3.特殊规则一条特殊规则一条特殊规则一条特殊规则一条</p>-->
+	</div>
+  </div>
+</div>
+	
+<div class="cut-off-line"></div>
+
+<footer>
+<p>毕业设计&nbsp;&nbsp;&nbsp;&nbsp;基于WEb的医疗预约前端系统的分析与设计</p>
+<p>指导老师：谷锐&nbsp;&nbsp;&nbsp;&nbsp;作者：欧桐桐&nbsp;&nbsp;&nbsp;&nbsp;学号：2220122592</p>
+<p>学院：交通运输管理学院&nbsp;&nbsp;&nbsp;&nbsp;专业班级：信息管理与信息系统12-03</p>
+</footer>
+
+</body>
+
+</html>

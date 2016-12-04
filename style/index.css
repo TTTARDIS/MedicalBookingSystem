@@ -1,0 +1,74 @@
+/***************************** container *****************************/
+.keshi{
+	height: 200px;
+	border: 1px solid #DCDCDC;
+	margin-bottom: 10px;
+	overflow: hidden;
+}
+.keshi_header{
+	height: 44px;
+	border-bottom: 1px #79CDCD solid;
+	line-height: 44px;
+	text-align: center;
+	font-size: 20px;
+	font-weight: 700;
+}
+.keshi_content{
+	height: 150px;
+	line-height: 30px;
+	padding-left: 10px;
+	padding-right: 10px;
+	overflow: hidden;
+}
+.keshi_content a{
+	margin-right: 10px;
+}
+.aside_box{
+	height: 350px;
+	border: 1px solid #DCDCDC;
+	margin-bottom:10px;
+}
+.aside_header{
+	height: 44px;
+	border-bottom: 1px #79CDCD solid;
+	line-height: 44px;
+	text-align: center;
+	font-size: 25px;
+	font-weight: 600;
+	color: #FFFAFA;
+	background: #4A939E;
+}
+.aside_content{
+	height: 300px;
+	line-height: 30px;
+	padding-left: 10px;
+	padding-right: 10px;
+	overflow: hidden;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,233 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="gb2312">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>注册</title>
+<base target="_blank">
+<link type="text/css" rel="stylesheet" href="style/bootstrap.min.css" />
+<link type="text/css" rel="stylesheet" href="style/main.css" />
+<link type="text/css" rel="stylesheet" href="style/register.css" />
+<link type="text/css" rel="stylesheet" href="style/bootstrap-datetimepicker.min.css" />
+<link type="text/css" rel="stylesheet" href="style/login.css" />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/bootstrap-datetimepicker.min.js"></script>
+<script type="text/javascript" src="js/jquery.validate.min.js"></script>
+<script type="text/javascript" src="js/messages_zh.min.js"></script>
+<script type="text/javascript" src="js/register.js"></script>
+<script type="text/javascript" src="js/login.js"></script>
+</head>
+
+<body>
+<header>
+	<div class="header_register">
+		<div class="container">
+			<div class="col-md-6 col-sm-6 hidden-sm hidden-xs text-left" id="welcome">&nbsp;&nbsp;&nbsp;&nbsp;欢迎来到在线医疗预约（信管12-03欧桐桐毕业设计）</div>
+			<div class="col-md-6 col-sm-12 col-xs-12 text-center">
+				<label id="phoneBook">&nbsp;&nbsp;&nbsp;&nbsp;电话预约&nbsp;&nbsp;<span class="glyphicon glyphicon-earphone" aria-hidden="true"></span>&nbsp;&nbsp;010-12345678&nbsp;&nbsp;&nbsp;&nbsp;</label>
+				<button id="login" class="btn btn-link" data-toggle="modal" data-target=".bs-example-modal-lg">登录</button>
+				|<button href="register.html" class="btn btn-link" id="rgst">注册</button>
+			</div>
+		</div>
+	</div>
+	<!--登录框-->
+	<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" id="loginDiv">
+	  <div class="modal-dialog modal-lg">
+		<div class="modal-content">
+		  <div class="login_box">
+			<ul class="nav nav-tabs" id="loginTab">
+				<li class="active"><a href="#loginDirectly">快速登录</a></li>
+				<li><a href="#loginChecked">验证登录</a></li>
+			</ul>
+			<div class="tab-content">
+				<center style="display:none" id="pswWrong"><p class="text-warning">用户名或密码错误请重试！</p></center>
+				<div class="tab-pane active" id="loginDirectly">
+					<img src="images/prompt.jpg" style="margin-bottom:10px;" />
+					<form class="form-horizontal" id="directlyloginForm">
+						<div class="form-group">
+							<label for="inputName1" class="control-label w100">用户姓名</label>
+							<input type="text" class="form-control w300" id="loginName1" placeholder="已注册的真实姓名" />
+						</div>
+						<div class="form-group">
+							<label for="inputID1" class="control-label w100">身份证号</label>
+							<input type="text" class="form-control w300" id="loginID1" placeholder="与用户姓名对应的身份证号码" />
+						</div>
+						<div class="form-group">
+							<label for="inputPassword1" class="control-label w100">密码</label>
+							<input type="password" class="form-control w300" id="loginPassword1" placeholder="正确的注册密码" />
+						</div>
+					</form>
+					<div class="modal-footer">
+						<button type="submit" class="btn btn-default" data-dismiss="modal">取消</button>
+						<button type="submit" class="btn btn-default rgst_button" id="loginBtn1">登录</button>
+					</div>
+				</div>
+				<div class="tab-pane" id="loginChecked">
+					<img src="images/prompt.jpg" style="margin-bottom:10px;"/>
+					<form class="form-horizontal" id="checkLoginForm">
+						<div class="form-group">
+							<label for="inputName2" class="control-label w100">用户姓名</label>
+							<input type="text" class="form-control w300" id="loginName2" placeholder="已注册的真实姓名" />
+						</div>
+						<div class="form-group">
+							<label for="inputID2" class="control-label w100">身份证号</label>
+							<input type="text" class="form-control w300" id="loginID2" placeholder="与用户姓名对应的身份证号码" />
+						</div>
+						<div class="form-group">
+							<label for="inputPhone" class="control-label w100">手机号码</label>
+							<input type="text" class="form-control w300" id="loginPhone" placeholder="与证件绑定的手机号码" />
+						</div>
+						<div class="form-group">
+							<label for="checkPhone" class="control-label w100">验证码</label>
+							<input type="text" class="form-control" style="width:135px;margin-left:30px;float:left" id="loginCheckCode" />
+							<button type="submit" class="btn btn-default" style="color:blue;" placeholder="手机短信收到的验证码">发送验证码</button>
+						</div>
+					</form>
+					<div class="modal-footer">
+						<button type="submit" class="btn btn-default" data-dismiss="modal">取消</button>
+						<button type="submit" class="btn btn-default rgst_button" id="loginBtn2">登录</button>
+					</div>
+				</div>							
+			</div>
+		  </div>
+		  
+		</div>
+	  </div>
+	</div>
+	
+	<div class="header_ad">
+		<img class="img-responsive center-block" src="images/logo.png" />
+	</div>
+</header>
+
+<nav class="root_nav">
+	<div class="container">
+	<ul class="nav nav-pills nav-justified">
+        <li class="col-sm-3"><a href="index.html" title="首页">首页</a></li>
+        <li class="col-sm-3"><a href="hospitals.html" title="医院介绍">医院介绍</a></li>
+        <li class="col-sm-3">
+			<a class="dropdown-toggle" data-toggle="dropdown" href="booking.html" role="button" aria-haspopup="true" aria-expanded="false">
+			  免费预约
+			  <span class="caret"></span>
+			</a>
+			<ul class="dropdown-menu">
+				<li role="presentation"><a href="hospitals.html" style="color:black;">按医院预约</a></li>
+				<li role="presentation"><a href="disease.html" style="color:black;">按疾病预约</a></li>
+			</ul>
+		</li>
+        <li class="col-sm-3"><a href="disease.html" title="健康查询">健康查询</a></li>
+        <li class="col-sm-3"><a href="announcement.html" title="最新公告">最新公告</a></li>
+	</ul>
+	</div>
+</nav>
+
+<div class="container">
+	<div class="register_title">新用户注册</div>
+	<div class="register_bar">
+		<label class="label1 text-left active" id="inputInfo">填写基本信息</label>
+		<label class="label1 text-center" id="confirmInfo">确认注册信息</label>
+		<label class="label1 text-right" id="regsiterOK">注册成功</label>
+		<div class="process1" id="process"></div>
+	</div>
+	
+	<!--registerBtn-->
+	<form class="form-horizontal" id="inputDiv">
+	    <div class="form-group">
+			<label for="inputName" class="control-label width100">姓名</label>
+			<input type="text" class="form-control width400" id="inputName" name="inputName"/>
+	    </div>
+		<div class="form-group" style="width:100%">
+			<label for="gender"  class="control-label width100">性别</label>
+			<select class="form-control width100" id="gender" name="gender" style="margin-left:15px;">
+			  <option>男</option>
+			  <option>女</option>
+			</select>
+		</div>
+	    <div class="form-group">
+			<label for="inputID" class="control-label width100">身份证号</label>
+			<input type="text" class="form-control width400" id="inputID" name="inputID" placeholder="请输入有效身份证号码" />
+	    </div>
+		<div class="form-group">
+			<label for="inputBirthday" class="control-label width100">出生日期</label>
+			<div class="input-group date form_date width400" data-date="" data-date-format="dd MM yyyy" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd">
+                <input class="form-control" size="16" type="text" id="inputBirthday" value="" readonly>
+				<span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+            </div>
+			<input type="hidden" id="dtp_input2" value="" /><br/>
+	    </div>
+		<div class="form-group">
+			<label for="inputPassword" class="control-label width100">设置密码</label>
+			<input type="password" class="form-control width400" id="inputPassword" name="inputPassword" />
+	    </div>
+		<div class="form-group">
+			<label for="checkPassword" class="control-label width100">确认密码</label>
+			<input type="password" class="form-control width400" id="checkPassword" name="checkPassword" />
+	    </div>
+		<div class="form-group">
+			<label for="inputPhone" class="control-label width100">手机号码</label>
+			<input type="text" class="form-control width400" id="inputPhone" name="inputPhone"/>
+	    </div>
+		<div class="form-group">
+			<label for="checkPhone" class="control-label width100">手机验证码</label>
+			<input type="text" class="form-control" style="width:190px;margin-left:15px;margin-right:10px;float:left" id="checkPhone" />
+			<button type="submit" class="btn btn-default" style="color:blue;">发送验证码</button>
+	    </div>
+	    <div class="form-group">
+			<div class="col-sm-offset-3 col-sm-9">
+			    <div class="checkbox">
+					<input type="checkbox" id="contract" name="contract"/> 本人同意<a href="#" style="color:blue">《预约就医服务协议》</a>
+			    </div>
+			</div>
+		</div>
+	    <div class="form-group">
+			<center><button type="submit" class="btn btn-default register_button" id="registerBtn">注册</button></center>
+		</div>
+	</form>
+	
+	<!--cfmBack cfmBtn-->
+	<div id="confirmDiv">
+		<center class="row cfmPiece">
+			<label>姓名： </label>
+			<label id="cfmName">张三</label>
+	    </center>
+		<center class="row cfmPiece">
+			<label>性别： </label>
+			<label id="cfmSex">男</label>
+		</center>
+	    <center class="row cfmPiece">
+			<label>身份证号： </label>
+			<label id="cfmID">111222333344445555</label>
+		</center>
+		<center class="row cfmPiece">
+			<label>出生日期： </label>
+			<label id="cfmBirth">1994-01-01</label>
+		</center>
+		<center class="row cfmPiece">
+			<label>手机号码： </label>
+			<label id="cfmPhone">12345678900</label>
+		</center>
+	    <div class="row cfmPiece"><center>
+			<button type="submit" class="btn btn-default" id="cfmBack">返回修改</button>
+			<button type="submit" class="btn btn-default register_button" id="cfmBtn">确认信息</button>
+		</center></div>
+	</div>
+	
+	<div id="okDiv">
+		注册成功！5秒内返回主页,点击<a href="index.html">这里</a>直接返回主页。
+	</div>
+	
+</div> 
+ 
+<div class="cut-off-line">
+</div>
+
+<footer>
+<p>毕业设计&nbsp;&nbsp;&nbsp;&nbsp;基于WEb的医疗预约前端系统的分析与设计</p>
+<p>指导老师：谷锐&nbsp;&nbsp;&nbsp;&nbsp;作者：欧桐桐&nbsp;&nbsp;&nbsp;&nbsp;学号：2220122592</p>
+<p>学院：交通运输管理学院&nbsp;&nbsp;&nbsp;&nbsp;专业班级：信息管理与信息系统12-03</p>
+</footer>
+</body>
+
+</html>
